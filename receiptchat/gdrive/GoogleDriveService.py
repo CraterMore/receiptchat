@@ -22,6 +22,7 @@ class GoogleDriveService:
         os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = credential_path
 
     def build(self):
+        print(os.getenv("GOOGLE_APPLICATION_CREDENTIALS"))
         creds = ServiceAccountCredentials.from_json_keyfile_name(
             os.getenv("GOOGLE_APPLICATION_CREDENTIALS"), self.SCOPES
         )
